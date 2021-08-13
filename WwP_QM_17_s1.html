@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<?php
+
+	session_start();
+	
+	if (!isset($_SESSION['zalogowany']))
+	{
+		header('Location: index.php');
+		exit();
+	}
+	
+?>
+
+
+<html lang="pl-PL">
+
+<head> 
+    <title>WwP QM-17 s1</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta lang="pl">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script type="text/javascript" src="qm17.js"></script>
+    
+</head>
+
+    
+<form action="dodaj.php" method="post">
+
+<div class="contproc">
+    
+    
+    <div class="napis"> 
+        <img src="img/logo_CBI.jpg" id="obrazek">
+    </div>
+   
+    <div class="napis">
+        <p>Formularz do opisu pod - procesu <br /> 
+            WwP QM-17 s1 <br />
+            Audyty Warstwowe Procesu - checklista</p>
+    </div>
+
+    <div style="clear: both;"></div>
+   
+<hr>
+<p style="font-size: 45px; font-weight: 600"> Dane ogólne</p>
+<hr>
+
+  
+
+<div class="pytanie">Data Audytu</div>
+<div class="odpowiedz">
+    <input type="date" name="DataAudytu" required style="font-size: 35px;">
+</div>    
+<div style="clear: both"></div>
+<hr>
+
+<div class="pytanie"><br />Poziom Audytu</div>
+<div class="odpowiedz">
+    <label><input type="radio" name="Poziom" value="PoziomTL" required checked> 1 (TL)<br /></label>
+	<label><input type="radio" name="Poziom" value="PoziomMSF" required> 2 (MSF II Linia)<br /></label>
+	<label><input type="radio" name="Poziom" value="PoziomPM" required> 3 (PM I Linia) <br /></label>
+</div>    
+<div style="clear: both"></div>
+<hr>
+
+<div class="pytanie"><br />Autytowany obszar</div>
+<div class="odpowiedz">
+	<label><input type="radio" name="Obszar" value="ObszarObróbka" required checked>Obróbka<br /></label>
+	<label><input type="radio" name="Obszar" value="ObszarMontaż" required>Montaż<br /></label>
+	<label><input type="radio" name="Obszar" value="ObszarGalwanizernia" required>Galwanizernia<br /></label>
+	<label><input type="radio" name="Obszar" value="ObszarJakość" required>Jakość<br /></label>
+	<label><input type="radio" name="Obszar" value="ObszarLogistyka" required>Logistyka<br /></label>
+	<label><input type="radio" name="Obszar" value="ObszarUtrzymanieRuchu" required>Utrzymanie ruchu<br /></label>
+</div>    
+<div style="clear: both"></div>
+<hr>
+
+<div class="pytanie">Linia</div>
+<div class="odpowiedz">
+	<select name="Linia">
+        <option selected>            </option>
+        <option>Linia Ut-199</option>
+		<option>Linia Ut-200</option>
+		<option>Linia Ut-203</option>
+		<option>Linia Ut-205</option>
+		<option>Linia Ut-163</option>
+		<option>Linia Ut-191</option>
+		<option>Linia Ut-145</option>
+		<option>Linia Ut-204</option>
+	</select>
+</div>    
+<div style="clear: both"></div>
+<hr>
+    
+
+<div class="pytanie">Operacja</div>
+<div class="odpowiedz">
+	<select name="Operacja">
+		<option selected>              </option>
+        <option>Obróbka op. 10</option>
+		<option>Obróbka op. 20</option>
+	</select>
+</div>    
+<div style="clear: both"></div>
+<hr>    
+    
+    
+<div class="pytanie">Maszyna</div>
+<div class="odpowiedz">
+    <textarea name="Maszyna" required> </textarea>
+</div>    
+<div style="clear: both"></div>
+<hr>    
+    
+
+<div class="pytanie">Produkt</div>
+<div class="odpowiedz">
+    <textarea name="Produkt" required> </textarea>
+</div>    
+<div style="clear: both"></div>
+<hr>    
+    
+<div class="pytanie">Audytor</div>
+<div class="odpowiedz">
+    <textarea name="Audytor" required> </textarea>
+</div>    
+<div style="clear: both"></div>
+<hr>       
+  
+
+<div class="pytanie">Funkcja</div>
+<div class="odpowiedz">
+    <textarea name="Funkcja" required> </textarea>
+</div>    
+<div style="clear: both"></div>
+<hr>      
+
+
+    
+<div class="pytanie">Audytowany</div>
+<div class="odpowiedz">
+    <textarea name="Audytowany" required> </textarea>
+</div>    
+<div style="clear: both"></div>
+<hr>      
+
+<div class="pytanie">
+    <a>Audytowana zmiana </a>
+</div>
+<div class="odpowiedz">
+    <textarea name="AudytowanaZmiana" required> </textarea>
+</div>    
+<div style="clear: both"></div>
+<hr>      
+
+
+<hr>      
+<p style="font-size: 50px; font-weight: 600">Pytania audytowe</p>
+<hr>
+<h2>1. Audyty LPA </h2>
+<hr>    
+
+
+<div class="question">
+	<p>1.1 Czy LPA jest wykonywane zgodnie z harmonogramem?</p>
+	<p>
+		<label><input type="radio" name="LPA11" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="LPA11" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="LPA11" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="LPA11K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>
+
+    
+<div class="question">
+	<p>1.2 Czy działania korygujące do niezgodności z poprzednich audytów LPA zostały wprowadzone?</p>
+	<p>
+		<label><input type="radio" name="LPA12" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="LPA12" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="LPA12" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="LPA12K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>
+    
+   
+<h2>2. BHP i 5S  </h2>
+<hr>
+
+<div class="question">
+	<p>2.1 Czy środki ochrony indywidualnej są stosowane zgodnie z wymaganiami?</p>
+	<p>
+		<label><input type="radio" name="BHP21" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="BHP21" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="BHP21" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="BHP21K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>
+    
+   
+<div class="question">
+	<p>2.2 Czy drogi ewakuacyjne są oznaczone, a środki przeciwpożarowe dostępne?</p>
+	<p>
+		<label><input type="radio" name="BHP22" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="BHP22" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="BHP22" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="BHP22K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>
+    
+<div class="question">
+	<p>2.3 Czy pracownicy posiadają uprawnienia np. na wózki widłowe?</p>
+	<p>
+		<label><input type="radio" name="BHP23" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="BHP23" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="BHP23" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="BHP23K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>
+    
+<div class="question">
+	<p>2.4 Czy substancje chemiczne są odpowiednio oznaczone?</p>
+	<p>
+		<label><input type="radio" name="BHP24" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="BHP24" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="BHP24" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="BHP24K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>    
+
+<div class="question">
+	<p>2.5 Czy w miejscu pracy znajduje się tylko potrzebne wyposażenie?</p>
+	<p>
+		<label><input type="radio" name="BHP25" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="BHP25" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="BHP25" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="BHP25K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>    
+
+<div class="question">
+	<p>2.6 Czy narzędzia, sprawdziany, części znajdują się z wyznaczonych miejscach i są odpowiednio opisane</p>
+	<p>
+		<label><input type="radio" name="BHP26" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="BHP26" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="BHP26" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="BHP26K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>    
+    
+<div class="question">
+	<p>2.7 Czy obszar pracy jest czysty?</p>
+	<p>
+		<label><input type="radio" name="BHP27" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="BHP27" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="BHP27" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="BHP27K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>    
+
+
+<h2>3. Obserwacja pracy standardowej </h2>
+<hr>    
+    
+<div class="question">
+	<p>3.1 Czy operatorzy wykonują pracę zgodnie z instrukcją?  
+        <span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(należy zaobserwować min. 3 cykle pracy operatora)</span></p>
+	<p>
+		<label><input type="radio" name="OPS31" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="OPS31" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="OPS31" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="OPS31K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>    
+
+<div class="question">
+	<p>3.2 Czy operatorzy znają i rozumieją charakterystyki specjalne występujące na ich stanowisku pracy?</p>
+	<p>
+		<label><input type="radio" name="OPS32" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="OPS32" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="OPS32" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="OPS32K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+  
+    
+<div class="question">
+	<p>3.3 Czy operatorzy znają zasady zatrzymania i uruchamiania linii?</p>
+	<p>
+		<label><input type="radio" name="OPS33" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="OPS33" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="OPS33" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="OPS33K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+    
+
+<h2>4. Dokumenty i zapisy  </h2>
+<hr>
+     
+
+<div class="question">
+	<p>4.1 Czy instrukcje pracy są dostępne?</p>
+	<p>
+		<label><input type="radio" name="DOK31" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="DOK31" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="DOK31" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="DOK31K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+    
+<div class="question">
+	<p>4.2 Czy są dostępne instrukcje w jęz. ukraińskim (jeśli wymagane)?</p>
+	<p>
+		<label><input type="radio" name="DOK32" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="DOK32" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="DOK32" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="DOK32K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+    
+    
+    
+<div class="question">
+	<p>4.3 Czy lista ze szkoleń jest dostępna?</p>
+	<p>
+		<label><input type="radio" name="DOK34" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="DOK34" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="DOK34" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="DOK34K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+
+<div class="question">
+	<p>4.4 Czy dostępne jest zatwierdzenie produkcji?</p>
+	<p>
+		<label><input type="radio" name="DOK35" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="DOK35" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="DOK35" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="DOK35K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+
+    
+<div class="question">
+	<p>4.5 Czy zapisy z kontroli są wykonywane na bieżąco?</p>
+	<p>
+		<label><input type="radio" name="DOK36" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="DOK36" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="DOK36" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="DOK36K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+    
+
+<h2>5. Identyfikacja i przechowywanie części </h2>
+<hr>
+    
+
+<div class="question">
+	<p>5.1 Czy komponenty / półwyroby / wyroby gotowe znajdują się w wyznaczonym miejscu i są oznaczone odpowiednią etykietą?</p>
+	<p>
+		<label><input type="radio" name="IPC41" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="IPC41" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="IPC41" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="IPC41K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+    
+    
+<div class="question">
+	<p>5.2 Czy pierwsza sztuka jest odłożona i oznaczona?</p>
+	<p>
+		<label><input type="radio" name="IPC42" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="IPC42" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="IPC42" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="IPC42K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+    
+    
+<div class="question">
+	<p>5.3 Czy na regałach zachowane jest FIFO?</p>
+	<p>
+		<label><input type="radio" name="IPC43" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="IPC43" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="IPC43" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="IPC43K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+    
+    
+<div class="question">
+	<p>5.4 Czy na stanowiskach znajdują się izolatory braków?</p>
+	<p>
+		<label><input type="radio" name="IPC44" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="IPC44" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="IPC44" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="IPC44K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+
+    
+<div class="question">
+	<p>5.5 Czy niezgodne lub podejrzane części są zidentyfikowane?</p>
+	<p>
+		<label><input type="radio" name="IPC45" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="IPC45" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="IPC45" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="IPC45K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+    
+
+<h2>6. POKA YOKE </h2>
+<hr>    
+
+    
+<div class="question">
+	<p>6.1 Czy Poka Yoke są weryfikowane?</p>
+	<p>
+		<label><input type="radio" name="POK51" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="POK51" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="POK51" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="POK51K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+    
+    
+<div class="question">
+	<p>6.2 Czy instrukcje do weryfikacji Poka Yoke są dostępne?</p>
+	<p>
+		<label><input type="radio" name="POK52" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="POK52" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="POK52" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="POK52K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+    
+    
+<h2>7. Monitorowanie i kontrola procesu </h2>
+<hr>    
+
+    
+<div class="question">
+	<p>7.1 Czy parametry procesu są zgodne z instrukcją?</p>
+	<p>
+		<label><input type="radio" name="MON61" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="MON61" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="MON61" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="MON61K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+
+
+<div class="question">
+	<p>7.2 Czy przestrzegane są zasady czystości hydraulicznej?</p>
+	<p>
+		<label><input type="radio" name="MON62" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="MON62" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="MON62" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="MON62K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+    
+    
+<div class="question">
+	<p>7.3 Czy przestoje produkcyjne są odnotowywane?</p>
+	<p>
+		<label><input type="radio" name="MON63" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="MON63" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="MON63" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="MON63K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+
+    
+<div class="question">
+	<p>7.4 Czy TPM są wykonywane zgodnie z planem? Czy zapisy są dostępne?</p>
+	<p>
+		<label><input type="radio" name="MON64" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="MON64" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="MON64" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="MON64K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+
+    
+<div class="question">
+	<p>7.5 Czy wszystkie przyrządy pomiarowe są dostępne na stanowisku?</p>
+	<p>
+		<label><input type="radio" name="MON66" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="MON66" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="MON66" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="MON66K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+    
+
+<div class="question">
+	<p>7.6 Czy są zidentyfikowane i zalegalizowane?</p>
+	<p>
+		<label><input type="radio" name="MON67" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="MON67" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="MON67" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="MON67K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+    
+    
+<div class="question">
+	<p>7.7 Czy są przechowywane w odpowiednich warunkach?</p>
+	<p>
+		<label><input type="radio" name="MON68" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="MON68" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="MON68" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="MON68K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+    
+
+    
+<h2>8. Narzędzia </h2>
+<hr>    
+    
+<div class="question">
+	<p>8.1 Czy części/narzędzia zapasowe są dostępne w obszarze pracy?</p>
+	<p>
+		<label><input type="radio" name="NAR71" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="NAR71" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="NAR71" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="NAR71K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+
+
+<div class="question">
+	<p>8.2 Czy są przechowywane w odpowiednich warunkach i łatwo dostępne?</p>
+	<p>
+		<label><input type="radio" name="NAR72" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="NAR72" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="NAR72" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="NAR72K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+    
+
+<h2>9. Komunikacja </h2>
+<hr>    
+
+
+<div class="question">
+	<p>9.1 Czy pracownicy poinformowani są o ostatniej reklamacji / wewnętrznych problemach jakościowych?</p>
+	<p>
+		<label><input type="radio" name="KOM81" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="KOM81" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="KOM81" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="KOM81K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+
+    
+<div class="question">
+	<p>9.2 Czy Alarm Jakości jest dostępny a pracownicy przeszkoleni?</p>
+	<p>
+		<label><input type="radio" name="KOM82" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="KOM82" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="KOM82" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="KOM82K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+
+    
+<div class="question">
+	<p>9.3 Czy informacje na tablicach są kompletne i zaktualizowane?</p>
+	<p>
+		<label><input type="radio" name="KOM83" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="KOM83" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="KOM83" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="KOM83K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+    
+
+<div class="question">
+	<p>9.4 Czy są zdefiniowane i śledzone działania do niezgodności?</p>
+	<p>
+		<label><input type="radio" name="KOM84" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="KOM84" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="KOM84" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="KOM84K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+
+    
+<div class="question">
+	<p>9.5 Czy matryca kompetencji jest dostępna i aktualna?</p>
+	<p>
+		<label><input type="radio" name="KOM85" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="KOM85" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="KOM85" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="KOM85K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+
+
+<h2>10. Dodatkowe pytania </h2>
+<hr>  
+
+    
+<div class="question">
+	<span>10.1</span>
+    <textarea name="PDOD91" placeholder="Pytanie 1" ></textarea>
+	<p>
+		<label><input type="radio" name="DOD91" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="DOD91" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="DOD91" required value="nok"> NOK</label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="DOD91K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+
+
+    
+<div class="question">
+    <span>10.2 </span> 
+    <textarea name="PDOD92" placeholder="Pytanie 2"></textarea>
+	<p>
+		<label><input type="radio" name="DOD92" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="DOD92" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="DOD92" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="DOD92K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+
+    
+<div class="question">
+    <span>10.3 </span> 
+    <textarea name="PDOD93" placeholder="Pytanie 3"></textarea>
+	<p>
+		<label><input type="radio" name="DOD93" required value="na" checked> N/A<br /></label>
+        <label><input type="radio" name="DOD93" required value="ok"> OK<br /></label>
+		<label><input type="radio" name="DOD93" required value="nok"> NOK<br /></label>
+	</p>
+</div>
+<div class="spacje"><p></p></div>    
+<div>
+    <textarea name="DOD93K" class="komentarz"> </textarea>
+</div>
+<div style="clear: both"></div>
+<hr>        
+    
+    
+<p style="font-size: 45px; font-weight: 600">Podsumowanie  </p>    
+<hr>
+    
+<div class="pytanie">Osoba nadzorująca obszar</div>
+<div class="odpowiedz">
+    <textarea name="PODS0"> </textarea>
+</div>    
+<div style="clear: both"></div>
+<hr>        
+
+    
+    
+<div class="pytanie">Inni uczestnicy audytu</div>
+<div style="clear: both"></div>
+<hr>        
+    
+<div class="pytanie">1.</div>
+<div class="odpowiedz"><textarea name="PODS11" placeholder="Nazwisko"></textarea></div>
+<div style="clear: both"></div>    
+<div class="pytanie"> </div>
+<div class="odpowiedz"><textarea name="PODS12" placeholder="Funkcja"></textarea></div>        
+<div style="clear: both"></div>
+<hr>        
+    
+<div class="pytanie">2.</div>
+<div class="odpowiedz"><textarea name="PODS21" placeholder="Nazwisko"></textarea></div>
+<div style="clear: both"></div>    
+<div class="pytanie"> </div>
+<div class="odpowiedz"><textarea name="PODS22" placeholder="Funkcja"></textarea></div>        
+<div style="clear: both"></div>
+<hr>            
+    
+<div class="pytanie">3.</div>
+<div class="odpowiedz"><textarea name="PODS31" placeholder="Nazwisko"></textarea></div>
+<div style="clear: both"></div>    
+<div class="pytanie"> </div>
+<div class="odpowiedz"><textarea name="PODS32" placeholder="Funkcja"></textarea></div>        
+<div style="clear: both"></div>
+<hr>           
+    
+<div class="pytanie">4.</div>
+<div class="odpowiedz"><textarea name="PODS41" placeholder="Nazwisko"></textarea></div>
+<div style="clear: both"></div>    
+<div class="pytanie"> </div>
+<div class="odpowiedz"><textarea name="PODS42" placeholder="Funkcja"></textarea></div>        
+<div style="clear: both"></div>
+<hr>          
+
+<br /><br /><br /><br />
+<!-- Przycisk WYŚLIJ -->
+<input type="submit" value="Zapisz formularz do bazy" class="przycisk">
+<!-- Przycisk WYCZYŚĆ DANE -->
+<input type="reset" value="Wyczyść dane" class="przycisk">
+<br /><br /><br />
+<hr>
+<hr>
+<h5 align="center">  ver. 1.1  &copy; WwP/IT 2020</h5>
+
+</div>
+</form>

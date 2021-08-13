@@ -1,0 +1,365 @@
+body
+{
+	background-color: #404040;
+}
+
+radio
+{
+    font-size: 25px;
+}
+
+option
+{
+    font-size: 25px;
+}
+
+select
+{
+    font-size: 25px;
+}
+
+.odpowiedz > textarea
+{
+    font-size: 25px;
+    width: 95%;
+    height: 30px;
+    
+}
+
+.odpowiedz2 > textarea
+{
+    font-size: 25px;
+    width: 95%;
+}
+
+
+.question > textarea
+{
+    font-size: 25px;
+    width: 100%;
+}
+
+
+.contproc
+{
+    background-color:darkgray;
+	width: 100%;
+	margin-left: auto
+	margin-right: auto;
+
+}
+
+
+
+.container
+{
+	/*width: 1000px;*/
+    width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+    background-color: #404040;
+}
+
+#logo
+{
+	color: white;
+	margin-top: 20px;
+    font-size: 24px;
+}
+
+
+#sidebar
+{
+	float:inherit;
+	/*width: 148px;*/
+    width: 100%;
+	min-height: 620px;
+	padding:30px;
+	background-color: lightgray;
+	text-align: center;
+	/*font-size: 18px;*/
+    font-size: 50px;
+    min-height: 550px;
+
+}
+
+#content
+{
+	float: left;
+	padding: 40px;
+	/*width: 730px;*/
+    width: 100%;
+	text-align: justify;
+    min-height: 510px;
+    background-color: whitesmoke;
+    color: black;
+
+}
+
+#footer
+{
+	width: 100%;
+    clear: both;
+	color: white;
+	text-align: center;
+	padding: 20px;
+	font-size: 18px;
+}
+
+.optionL
+{
+	/*font-size:18px;*/
+    font-size:50px;
+	/*height:25px;*/
+    height:65px;
+	padding: 10px;
+    color: black;
+    }
+
+.optionL:hover
+{
+	background-color: #808080;
+	color: black;
+	cursor: pointer;
+}
+
+
+
+th, td 
+{    
+    border-bottom: 2px solid #ddd; 
+}
+
+
+.tabela1 
+{
+    background-color: silver;
+    border-spacing: 20px;
+    border-collapse: separate;
+    table-layout:fixed; width: 100%;
+    font-size: 20px;
+}
+
+
+.tabelka 
+{
+    background-color: silver;
+    border-spacing: 20px;
+    border-collapse: separate;
+    /*table-layout: fixed; width: 90%;*/
+    table-layout:fixed; width: 100%;
+    vertical-align: middle;
+    font-size: 20px;
+    
+}
+
+
+.przycisk 
+{
+    height: 70px;
+    width: 460px;
+    background-color: cadetblue;
+    font-size: 25px;
+ }
+
+
+
+
+
+.przycisk:hover 
+{
+    background-color: skyblue;
+}
+
+textarea 
+{
+            font-size: 25px;    
+}
+
+input 
+{
+    font-size: 20px;
+}
+
+#obrazek
+{
+    padding: 0px;
+    margin-left: 10px;
+    margin-right: auto;
+    background-color: darkred;
+    float: left;
+    width: 423px;
+    height: 118px;
+    margin: 0px;
+    margin-top: 6px;
+
+        
+}
+
+.napis
+{
+    width: 50%;
+    height: 140px;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: darkred;
+    color: white;
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-align: center;
+    float: left;
+}
+
+a:link
+{
+    color: black;
+    text-decoration: none;
+}
+
+
+a:visited
+{
+    color: black;
+    text-decoration: none;
+}
+
+
+a:hover
+{
+    color:black;
+    text-decoration: none;
+}
+
+.pytanie
+{
+    /*width: 360px;*/
+    width: 30%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: darkgray;
+    color: black;
+    /*font-size: 22px;*/
+    font-size: 25px;
+    text-align: left;
+    float: left;
+    vertical-align: middle;
+    line-height: 60px;
+}
+
+.odpowiedz
+{
+    width: 70%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: darkgray;
+    color: black;
+    font-size: 25px;
+    text-align: left;
+    float: left;
+    line-height: 60px;
+}
+
+textarea
+{
+    resize: none;
+    width: 400px;
+    height: 70px;
+
+}
+
+
+.pytanie2
+{
+    width: 900px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: darkgray;
+    color: black;
+    font-size: 22px;
+    text-align: left;
+    float: left;
+    vertical-align: middle;
+    text-align: justify;
+}
+
+
+.odpowiedz2
+{
+    width: 360px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: darkgray;
+    color: black;
+    font-size: 22px;
+    text-align: left;
+    float: left;
+    line-height: 50px;
+    padding-left: 100px;
+}
+
+.pytanie2 textarea
+{
+    width: 34em;
+    height: 2em;
+}
+
+.komentarz
+{
+    resize: none;
+    width: 96%;
+    height: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    float:left;
+    font-size: 25px;
+
+}
+
+.spacje
+{
+    width: 2%;
+    float: left;
+}
+
+.error
+{
+	color:red;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+ 
+.question 
+{
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: darkgray;
+    color: black;
+    font-size: 25px;
+    text-align: left;
+    float: left;
+    vertical-align: middle;
+    text-align: justify;
+    line-height: 50px;
+    padding-left: 2%;
+    padding-right: 2%;
+    line-height: 60px;
+}
+
+.question_nok
+{
+	background-color: orangered;
+}
+
+.question_ok 
+{
+	background-color: limegreen;
+}
